@@ -1,0 +1,12 @@
+{
+    "title": "Certificates",
+    "description": "Click on the certificates to validate them.",
+    "color": "bg-cornflowerblue",
+    "items": [
+        {"id": "", "src": "data/rl.json"},
+        {"id": "", "src": "data/unityCert.json"},
+        {"id": "", "src": "data/structML.json"},
+        {"id": "", "src": "data/dlCert.json"},
+        {"id": "", "src": "data/improvingDLCert.json"}
+    ]
+}                   

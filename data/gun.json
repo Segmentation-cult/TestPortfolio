@@ -1,0 +1,37 @@
+{
+    "url": "https://www.youtube.com/watch?v=VFsDhMD9Jfg",
+    "title": "Nerf VR Gun Controller",
+    "description": {
+        "text": "Shoot in real life, shoot in game. Reload in real life, reload in game. Melee in real life, melee in game. Aim in real life, aim in game...",
+        "size": "",
+        "bold": false,
+        "black": false,
+        "icon": {
+            "shape": "fab fa-youtube",
+            "color": "#ca0707"
+        },
+        "hover-text": "(Hover to watch the demo)"
+    },
+    "content": {
+        "image": "",
+        "video": {
+            "poster": "assets/img/Gun.jpg",
+            "src": "assets/videos/Gun.mp4"
+        },
+        "caption": ""
+    },
+    "repo-stats": {
+        "langs": "[\"C++\", \"Cpp\"]",
+        "forks": "",
+        "stars": "",
+        "black": ""
+    },
+    "bulletPoints": [
+        "Turned a Nerf gun to a gun controller for PC, Xbox, PS4 games which acts as a mouse and keyboard using Arduino",
+        "Pull the trigger in real life, it'll shoot in game",
+        "Reload in real life, it'll reload in game",
+        "Use the buttons and thumb stick to walk, jump, interact...",
+        "Works on every FPS game",
+        "Melee in real life, it'll melee in game, check the video for more details"
+    ]
+}

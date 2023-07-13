@@ -1,0 +1,36 @@
+{
+    "url": "https://github.com/Null3rror/Xbox-Remote-Controller-Android-App",
+    "title": "Xbox Remote Controller App",
+    "description": {
+        "text": "Missing controllers at a local lan party? Don't worry, we got you covered",
+        "size": "",
+        "bold": false,
+        "black": false,
+        "icon": {
+            "shape": "fab fa-github",
+            "color": ""
+        },
+        "hover-text": "(Hover to watch the demo)"
+    },
+    "content": {
+        "image": "",
+        "video": {
+            "poster": "assets/img/xboxRemoteController.jpg",
+            "src": "assets/videos/xboxRemoteController.mp4"
+        },
+        "caption": ""
+    },
+    "repo-stats": {
+        "langs": "[\"C++\", \"Cpp\"], [\"Java\"]",
+        "forks": "[0]",
+        "stars": "[6]",
+        "black": ""
+    },
+    "bulletPoints": [
+        "Your Android device can act as an Xbox controller",
+        "Supports multiplayer, up to 4 players, useful for when you're short on controllers",
+        "Support multiple layouts for different games, e.g., gyroscope layout for driving games",
+        "Supports Unity games and every game that supports Xbox controller",
+        "Works alongside different controllers (e.g. Xbox controller) and mouse and keyboard"
+    ]
+}

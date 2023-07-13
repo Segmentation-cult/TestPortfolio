@@ -1,0 +1,32 @@
+{
+    "url": "https://www.youtube.com/watch?v=ZlJYzW8sW_s",
+    "title": "Haft Peykar's Turquoise Dome",
+    "description": {
+        "text": "Reimagined Haft Peykar's Turquoise Dome in Unity. Haft Peykar is a romantic epic by Persian poet Nizami Ganjavi written in 1197",
+        "size": "",
+        "bold": false,
+        "black": false,
+        "icon": {
+            "shape": "fab fa-youtube",
+            "color": "#ca0707"
+        },
+        "hover-text": ""
+    },
+    "content": {
+        "image": "haftPeykar",
+        "video": {
+            "poster": "",
+            "src": ""
+        },
+        "caption": "(The original concept was drawn by <a href=\"https://www.linkedin.com/in/mohammad-amin-farzinfar-b80318240/\" target=\"_blank\">Mohammad Amin Farzinfar</a>, be sure to check him out)"
+    },
+    "repo-stats": {
+        "langs": "[\"C#\", \"Csharp\"], [\"ShaderLab\"]",
+        "forks": "",
+        "stars": "",
+        "black": ""
+    },
+    "bulletPoints": [
+        "Responsible for shaders, particles, level design and scripts"
+    ]
+}

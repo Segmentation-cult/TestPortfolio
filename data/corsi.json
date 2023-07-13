@@ -1,0 +1,34 @@
+{
+    "url": "https://null3rror.itch.io/corsi-block",
+    "title": "CorsiBlock",
+    "description": {
+        "text": "This was my thesis project which was part of a series of cognitive games for visual/auditory memory improvement of children and elders",
+        "size": "",
+        "bold": false,
+        "black": false,
+        "icon": {
+            "shape": "fab fa-itch-io",
+            "color": ""
+        },
+        "hover-text": "(Hover to watch the demo)"
+    },
+    "content": {
+        "image": "",
+        "video": {
+            "poster": "assets/img/CorsiBlock.jpg",
+            "src": "assets/videos/CorsiBlock.mp4"
+        },
+        "caption": ""
+    },
+    "repo-stats": {
+        "langs": "",
+        "forks": "",
+        "stars": "",
+        "black": ""
+    },
+    "bulletPoints": [
+        "Performed as Software Architect and Unity Developer developing and architecting game components",
+        "Developed 2D and 3D Corsi Block for visual/auditory memory improvement of children and elders <a href='https://null3rror.itch.io/corsi-block' target='_blank'>(demo)</a>",
+        "Led a junior programmer to develop a Dementia assessment game"
+    ]
+}

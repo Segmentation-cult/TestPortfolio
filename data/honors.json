@@ -1,0 +1,9 @@
+{
+    "title": "Honors & Awards",
+    "description": "Click on the awards for more info.",
+    "color": "bg-cadetblue",
+    "items": [
+        {"id": "", "src": "data/thesis.json"},
+        {"id": "", "src": "data/graduation.json"}
+    ]
+}                   

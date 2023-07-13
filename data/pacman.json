@@ -1,0 +1,33 @@
+{
+    "url": "https://null3rror.itch.io/pacman",
+    "title": "Pacman with A* in Unity",
+    "description": {
+        "text": "Each ghost chases pacman based on a unique strategy. At their core they use A* algorithm to do the pathfinding",
+        "size": "",
+        "bold": false,
+        "black": false,
+        "icon": {
+            "shape": "fab fa-itch-io",
+            "color": ""
+        },
+        "hover-text": "(Hover to watch the demo)"
+    },
+    "content": {
+        "image": "",
+        "video": {
+            "poster": "assets/img/Pac.jpg",
+            "src": "assets/videos/Pac.mp4"
+        },
+        "caption": ""
+    },
+    "repo-stats": {
+        "langs": "[\"C#\", \"Csharp\"]",
+        "forks": "",
+        "stars": "",
+        "black": ""
+    },
+    "bulletPoints": [
+        "Pacman game were each ghost has different strategy (same strategies as the original game)",
+        "Programmed ghosts to use A* for pathfinding"
+    ]
+}

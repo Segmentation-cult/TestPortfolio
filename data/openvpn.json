@@ -1,0 +1,35 @@
+{
+    "url": "https://github.com/Null3rror/OpenVPN-over-Proxy",
+    "title": "OpenVPN over Proxy",
+    "description": {
+        "text": "This script will let you set up your own VPN server HTTP proxy so you can bypass DPIs in no more than a minute, even if you haven't used OpenVPN or HTTP proxies before",
+        "size": "medium",
+        "bold": true,
+        "black": true,
+        "icon": {
+            "shape": "fab fa-github",
+            "color": "black"
+        },
+        "hover-text": ""
+    },
+    "content": {
+        "image": "openVPN",
+        "video": {
+            "poster": "",
+            "src": ""
+        },
+        "caption": ""
+    },
+    "repo-stats": {
+        "langs": "[\"Shell\"]",
+        "forks": "[6]",
+        "stars": "[33]",
+        "black": "true"
+    },
+    "bulletPoints": [
+        "OpenVPN over Proxy road warrior installer for Ubuntu",
+        "This installer has helped many people in countries with strict censorship",
+        "Let's you setup your own vpn server in matters of minutes",
+        "Wraps OpenVPN over proxy even if you don't have a separate proxy server"
+    ]
+}

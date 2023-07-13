@@ -1,0 +1,35 @@
+{
+    "url": "https://www.youtube.com/watch?v=212zJ_9VS3A",
+    "title": "Tank Trouble in Pygame",
+    "description": {
+        "text": "My first game, with Python in 2017.<br>They say you never forget your first",
+        "size": "",
+        "bold": false,
+        "black": false,
+        "icon": {
+            "shape": "fab fa-youtube",
+            "color": "#ca0707"
+        },
+        "hover-text": "(Hover to watch the demo)"
+    },
+    "content": {
+        "image": "",
+        "video": {
+            "poster": "assets/img/tankTrouble.jpg",
+            "src": "assets/videos/tankTrouble.mp4"
+        },
+        "caption": ""
+    },
+    "repo-stats": {
+        "langs": "[\"Python\"]",
+        "forks": "",
+        "stars": "",
+        "black": ""
+    },
+    "bulletPoints": [
+        "2D game developed using PyGame(Python)",
+        "Supports local multiplayer and supports Xbox and PS4 controllers",
+        "Implemented horde (survival) mode with waypoint based AIs",
+        "Implemented shotgun, big ball and shield power up"
+    ]
+}

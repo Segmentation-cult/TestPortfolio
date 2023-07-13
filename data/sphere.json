@@ -1,0 +1,35 @@
+{
+    "url": "https://null3rror.itch.io/sphere",
+    "title": "S.P.H.E.R.E",
+    "description": {
+        "text": "",
+        "size": "",
+        "bold": false,
+        "black": false,
+        "icon": {
+            "shape": "fab fa-itch-io",
+            "color": ""
+        },
+        "hover-text": "(Hover to watch the demo)"
+    },
+    "content": {
+        "image": "",
+        "video": {
+            "poster": "assets/img/sphere.jpg",
+            "src": "assets/videos/sphere.mp4"
+        },
+        "caption": ""
+    },
+    "repo-stats": {
+        "langs": "[\"C#\", \"Csharp\"]",
+        "forks": "",
+        "stars": "",
+        "black": ""
+    },
+    "bulletPoints": [
+        "Based on Trials Evolution's mini game, this game was developed to represent our <a href=\"#Xbox\">Xbox Remote Controller</a>",
+        "Programmed ball's movement and behavior",
+        "Programmed custom occlusion to segment levels into zones for optimization",
+        "Programmed dynamic obstacles and steams"
+    ]
+}

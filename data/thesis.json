@@ -1,0 +1,29 @@
+{
+    "url": "#thesis",
+    "title": "",
+    "newTab": false,
+    "description": {
+        "text": "<br><br><br>For my thesis project",
+        "size": "large",
+        "bold": false,
+        "black": true,
+        "hover-text": ""
+    },
+    "content": {
+        "image": "thesisAward",
+        "video": {
+            "poster": "",
+            "src": ""
+        },
+        "caption": ""
+    },
+    "repo-stats": {
+        "langs": "",
+        "forks": "",
+        "stars": "",
+        "black": ""
+    },
+    "bulletPoints": [
+        
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "title": "Professional Projects",
+    "description": "<span class=\"underline text-secondary\">Click on</span> (or if you're not on a phone, <span class=\"underline text-secondary\">hover over</span>) the projects for more details.",
+    "color": "bg-dark",
+    "items": [
+        {"id": "", "src": "data/infraspace.json"},
+        {"id": "", "src": "data/foundersFortune.json"},
+        {"id": "thesis", "src": "data/corsi.json"}
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "url": "https://null3rror.itch.io/prince-of-persias-time-reverse-mechanic-in-unity",
+    "title": "Prince of Persia Rewind in Unity",
+    "description": {
+        "text": "Rewind time like Prince of Persia",
+        "size": "",
+        "bold": false,
+        "black": false,
+        "icon": {
+            "shape": "fab fa-itch-io",
+            "color": ""
+        },
+        "hover-text": "(Hover to watch the demo)"
+    },
+    "content": {
+        "image": "",
+        "video": {
+            "poster": "assets/img/PoP.jpg",
+            "src": "assets/videos/Pop.mp4"
+        },
+        "caption": ""
+    },
+    "repo-stats": {
+        "langs": "[\"C#\", \"Csharp\"]",
+        "forks": [],
+        "stars": [],
+        "black": ""
+    },
+    "bulletPoints": [
+        "A 3rd person demo which you can rewind time like Prince of Persia",
+        "Programmed rewinding time mechanic and visuals effects",
+        "Programmed character movement",
+        "Used Cinemachine for camera controls",
+        "Used Blend Trees for movement animations"
+    ]
+}

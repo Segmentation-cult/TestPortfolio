@@ -1,0 +1,29 @@
+{
+    "url": "#home",
+    "title": "Space Ship Controller",
+    "description": {
+        "text": "Physic based space ship controller were you can fly, shoot bullets and lock missiles on targets",
+        "size": "",
+        "bold": false,
+        "black": false,
+        "hover-text": "(Hover to watch the demo)"
+    },
+    "content": {
+        "image": "",
+        "video": {
+            "poster": "assets/img/Jet.jpg",
+            "src": "assets/videos/Jet.mp4"
+        },
+        "caption": ""
+    },
+    "repo-stats": {
+        "langs": "[\"C#\", \"Csharp\"]",
+        "forks": "",
+        "stars": "",
+        "black": ""
+    },
+    "bulletPoints": [
+        "Used physics to implement the space ship movement",
+        "Used math to implement rocket targeting"
+    ]
+}

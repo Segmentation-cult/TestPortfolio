@@ -1,0 +1,44 @@
+{
+    "url": "https://store.steampowered.com/app/1511460/InfraSpace/",
+    "title": "InfraSpace",
+    "description": {
+        "text": "Game Programmer at Dionic Software",
+        "size": "x-large",
+        "bold": true,
+        "black": false,
+        "icon": {
+            "shape": "fab fa-steam",
+            "color": ""
+        },
+        "hover-text": ""
+    },
+    "content": {
+        "image": "infraspace",
+        "video": {
+            "poster": "",
+            "src": ""
+        },
+        "caption": "(Artwork is by <a href='https://www.artstation.com/adriana_filippini' target='_blank'>Adriana Filippini</a>, be sure to check her out)"
+    },
+    "repo-stats": {
+        "langs": "",
+        "forks": "",
+        "stars": "",
+        "black": ""
+    },
+    "bulletPoints": [
+        "Implemented an <a href='https://forum.dionicsoftware.com/t/friday-dev-news-125-oil-industry/3823#map-editor-progress-3' target='_blank'>in-game transform handles (translate, rotate and scale)</a> using low level rendering",
+        "Optimized pathfinding for large cities (e.g. 17000 roads) from 15.6s to 0.051s by <a href='https://forum.dionicsoftware.com/t/friday-dev-news-119-pathfinding-performance-update-on-may-12th/3769#:~:text=Instead%20of%20our,also%20significantly%20faster.' target='_blank'>writing a C++ plugin</a>",
+        "Optimized draw calls (e.g. for 10000 buildings from 838 to 240) by <a href='https://forum.dionicsoftware.com/t/friday-dev-news-105-vertex-animation-textures/3493#:~:text=There%20is%20also%20another%20hidden%20benefit%3A%20Our%20optimization%20allows%20us%20to%20treat%20each%20mine%20as%20one%20single%20game%20object%20(as%20opposed%20to%20being%20made%20out%20of%20multiple%20parts)%20and%20therefore%20we%20also%20have%20to%20send%20less%20draw%20calls%20to%20the%20graphics%20card.%20This%20is%20the%20batches%20number%20highlighted%20in%20red.' target='_blank'> writing a custom tool</a> to combine meshes into one mesh",
+        "Implemented a custom \"animation to texture\" baker tool to convert animation clips to textures. Then wrote a vertex shader that animates these baked textures <a href='https://forum.dionicsoftware.com/t/friday-dev-news-105-vertex-animation-textures/3493' target='_blank'>to animate up to 10000 buildings</a> (also known as VAT)",
+        "Optimized long road placements <a href='https://forum.dionicsoftware.com/t/friday-dev-news-118-polishing-decorative-update-release-on-may-12th-maybe/3763#:~:text=We%20optimized%20most%20of%20the%20slow%20parts%20and%20got%20from%20400%20milliseconds%20down%20to%2060%20milliseconds%20(6.7%20times%20faster!)%20when%20building%20a%20road%20in%20our%20test%20case%3A' target='_blank'>from 400ms to 60ms (6.7 times faster!)</a>",
+        "Programmed <a href='https://forum.dionicsoftware.com/t/friday-dev-news-108-terraformed-forests/3532'>a custom forest generator</a> by implementing a <a href='https://forum.dionicsoftware.com/t/friday-dev-news-109-biomes-mushrooms/3542' target='_blank'>Adaptive Multi-Class Poisson Disk Sampler</a>",
+        "Implemented <a href='https://forum.dionicsoftware.com/t/friday-dev-news-116-pixel-buildings/3736#:~:text=All%20the%20colors%20can%20be%20set%20with%20the%20new%20color%20picker%3A' target='_blank'>a custom color wheel</a> for trains and buildings",
+        "Implemented <a href='https://forum.dionicsoftware.com/t/friday-dev-news-99-environment-update-release-date/3357#gondola-pole-placement-3' target='_blank'>Gondola Station's placement algorithm</a> to connect two gondola stations over a tricky terrain",
+        "Detected <a href='https://forum.dionicsoftware.com/t/infraspace-terraforming-update-released/3609#:~:text=RAM%20work%20(VAT%20and%20impostors%20take%20more%20RAM%2C%20but%20texture%20streaming%20optimizes%20RAM%20usage)' target='_blank'>memory leak using memory profiler and helped to reduce RAM usage</a>",
+        "Implemented everything regarding <a href='https://forum.dionicsoftware.com/t/infraspace-terraforming-update-released/3609' target='_blank'>terraforming buildings</a> (besides the visualization mode, where everything goes white)",
+        "Implemented <a href='https://forum.dionicsoftware.com/t/friday-dev-news-92-giant-laser-from-space/3302' target='_blank'>a Laser Cannon</a> to clear the map",
+        "Leading and collaborating with a team of QA testers",
+        "Lots of other optimizations, bug fixes and feautres..."
+    ]
+}

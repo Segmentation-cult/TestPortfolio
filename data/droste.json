@@ -1,0 +1,33 @@
+{
+    "url": "https://github.com/Null3rror/Droste-Effect/",
+    "title": "Droste Effect in Python",
+    "description": {
+        "text": "Transform your images to generate an endless zoom<br><br>",
+        "size": "",
+        "bold": false,
+        "black": false,
+        "icon": {
+            "shape": "fab fa-github",
+            "color": ""
+        },
+        "hover-text": ""
+    },
+    "content": {
+        "image": "droste-effect",
+        "video": {
+            "poster": "",
+            "src": ""
+        },
+        "caption": ""
+    },
+    "repo-stats": {
+        "langs": "[\"Python\"]",
+        "forks": "[2]",
+        "stars": "[9]",
+        "black": ""
+    },
+    "bulletPoints": [
+        "Used complex number's transformations to implement Droste Effect in Python",
+        "My code wound up useful for a <a href=\"https://github.com/Null3rror/Droste-Effect/pull/1\">PHD researcher</a> for her <a href=\"https://github.com/lcipolina/escher\">\"Completing Escher's Print Gallery using Machine Learning\" research project</a>"
+    ]
+}

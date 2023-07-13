@@ -1,0 +1,19 @@
+{
+    "title": "Some Personal Projects",
+    "description": "<span class=\"underline text-secondary\">Click on</span> (or if you're not on a phone, <span class=\"underline text-secondary\">hover over</span>) the projects for more details.",
+    "color": "bg-primary",
+    "items": [
+        {"id": "", "src": "data/gun.json"},
+        {"id": "", "src": "data/openvpn.json"},
+        {"id": "", "src": "data/prince.json"},
+        {"id": "Xbox", "src": "data/xbox.json"},
+        {"id": "", "src": "data/ufo.json"},
+        {"id": "", "src": "data/pacman.json"},
+        {"id": "", "src": "data/droste.json"},
+        {"id": "", "src": "data/sphere.json"},
+        {"id": "", "src": "data/space.json"},
+        {"id": "", "src": "data/organs.json"},
+        {"id": "", "src": "data/haftPeykar.json"},
+        {"id": "", "src": "data/tank.json"}
+    ]
+}                   

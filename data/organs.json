@@ -1,0 +1,30 @@
+{
+    "url": "https://globalgamejam.org/2020/games/man-looking-his-organs-9",
+    "title": "A Man Looking For His Organs",
+    "description": {
+        "text": "A messy Global Game Jam with my friends in 2020, good times...",
+        "size": "",
+        "bold": false,
+        "black": false,
+        "hover-text": "(Hover to watch the demo)"
+    },
+    "content": {
+        "image": "",
+        "video": {
+            "poster": "assets/img/organs.jpg",
+            "src": "assets/videos/organs.mp4"
+        },
+        "caption": ""
+    },
+    "repo-stats": {
+        "langs": "[\"C#\", \"Csharp\"]",
+        "forks": "",
+        "stars": "",
+        "black": ""
+    },
+    "bulletPoints": [
+        "2D platformer game developed in 48 hours for Global Game Jam 2020, with theme of \"Repair\"",
+        "Programmed player and AI behavior",
+        "Used Object Pooling for bullets to optimze the game"
+    ]
+}

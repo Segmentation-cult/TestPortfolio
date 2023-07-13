@@ -1,0 +1,37 @@
+{
+    "url": "https://jake-long.itch.io/super-crash-ufos",
+    "title": "Super Crash UFOs",
+    "description": {
+        "text": "A 72h game jam made by 4 people, working remotely from 3 different countries. Collect crates of fish and deliver them to the Drop Zone, throwing them through the portal, to gain points. However, don't get to close to your \"friends\"....",
+        "size": "",
+        "bold": false,
+        "black": false,
+        "icon": {
+            "shape": "fab fa-github",
+            "color": ""
+        },
+        "hover-text": ""
+    },
+    "content": {
+        "image": "jam",
+        "video": {
+            "poster": "",
+            "src": ""
+        },
+        "caption": ""
+    },
+    "repo-stats": {
+        "langs": "[\"C#\", \"Csharp\"]",
+        "forks": "",
+        "stars": "",
+        "black": ""
+    },
+    "bulletPoints": [
+        "Programmed UFO's movement, abduction, dropping...",
+        "Designed UFO's power up base architecture",
+        "Programmed power ups such as Black Hole, Shield and, Boost",
+        "Implemented local multiplayer logic using Unity's New Input System",
+        "Used mathematics to create smooth abduction animation",
+        "Responsible for the Portal (drop zone) and its shader particles"
+    ]
+}

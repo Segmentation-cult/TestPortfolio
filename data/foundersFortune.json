@@ -1,0 +1,41 @@
+{
+    "url": "https://store.steampowered.com/app/1104330/Founders_Fortune/",
+    "title": "Founders' Fortune",
+    "description": {
+        "text": "Game Programmer at Dionic Software",
+        "size": "x-large",
+        "bold": true,
+        "black": false,
+        "icon": {
+            "shape": "fab fa-steam",
+            "color": ""
+        },
+        "hover-text": ""
+    },
+    "content": {
+        "image": "foundersfortune",
+        "video": {
+            "poster": "",
+            "src": ""
+        },
+        "caption": ""
+    },
+    "repo-stats": {
+        "langs": "",
+        "forks": "",
+        "stars": "",
+        "black": ""
+    },
+    "bulletPoints": [
+        "Programmed everything in <a href='https://store.steampowered.com/news/app/1104330/view/3303977270407799580' target='_blank'>Founders' Fortune Hobby Update</a>",
+        "Used Render Doc to spot <a href='https://store.steampowered.com/news/app/1104330/view/3303977270407799580#:~:text=Wall%20%2B%20Floor%20ghost,portrait%20performance%20optimized' target='_blank'>GPU bottlenecks and optimized them</a>",
+        "Implemented <a href='https://store.steampowered.com/news/app/1104330/view/3303977270407799580#:~:text=With%20the%20schedule,manage%20them%20yourself.' target='_blank'>villager schedule</a>. Define at which hour your colonists do which tasks writing a custom toolto combine meshes into one mesh",
+        "Implemented a <a href='https://store.steampowered.com/news/app/1104330/view/3303977270407799580#:~:text=Crew%20Selection%20on%20Game%20Start' target='_blank'>character customization system</a>. Configure their age and appearance down to their personality and skill",
+        "<a href='https://store.steampowered.com/news/app/1104330/view/3303977270407799580#:~:text=personality%20and%20skill.-,Resources%20moddable,-A%20big%20thing' target='_blank'>Made resources moddable</a> by refactoring most parts of thee complex mods",
+        "Implemented a <a href='https://store.steampowered.com/news/app/1104330/view/3303977270407799580#:~:text=like%20the%20change!-,Furniture%20Storage,-Some%20of%20the' target='_blank'>new Storage System</a> where players can drag and drop furniture into the storage or from storage to the map",
+        "<a href='https://store.steampowered.com/news/app/1104330/view/3303977270407799580#:~:text=Some%20hobbies%20even%20produce%20new%20furniture%2C%20decoration%2C%20or%20goods%20which%20you%20can%20sell%3A' target='_blank'>Implemented hobbies (Painting, Music, Writing, Masonry...)</a> and hooked up artists' assets and animations",
+        "Implemented a <a href='https://store.steampowered.com/news/app/1104330/view/3303977270407799580#:~:text=don%27t%20need%20anymore!-,Sandbox%20Settings,-%2B%20Faster%20Game%20Pace' target='_blank'>new Sandbox setting</a>. Allowing players to adjust their experience to their liking.",
+        "Detected and <a href='https://store.steampowered.com/news/app/1104330/view/3303977270407799580#:~:text=Removed%20small%20islands' target='_blank'>removed unreachable islands</a>",
+        "Read the rest <a href='https://store.steampowered.com/news/app/1104330/view/3303977270407799580' target='_blank'>here</a>"
+    ]
+}
