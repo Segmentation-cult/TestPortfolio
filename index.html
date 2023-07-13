@@ -1,312 +1,385 @@
-<script language="javascript">
-    function lazyLoad(lazyVideos, lazyImages, lazyBackgrounds) {
-        if ("IntersectionObserver" in window) {
-            var lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(function(image) {
-                    if (image.isIntersecting) {
-                        const img = image.target;
-                        const src = img.getAttribute('data-src');
-                        img.setAttribute('src', src);
-                        img.classList.remove("lazy");
-                        lazyImageObserver.disconnect();
-                    }
-                });
-            });
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNFJ1BQX03"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-            lazyImages.forEach(function(lazyImage) {
-                lazyImageObserver.observe(lazyImage);
-            });
-
-            var lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        const classToAdd = entry.target.getAttribute('data-src');
-                        entry.target.classList.remove("lazy-background");
-                        entry.target.classList.add(classToAdd);
-                        lazyBackgroundObserver.unobserve(entry.target);
-                    }
-                });
-            });
-
-            lazyBackgrounds.forEach(function(lazyBackground) {
-                lazyBackgroundObserver.observe(lazyBackground);
-            });
-
-
-            var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(function(video) {
-                    if (video.isIntersecting) {
-                        for (var source in video.target.children) {
-                            var videoSource = video.target.children[source];
-                            if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
-                                if (video.target.classList.contains("hidden-video-phone") && window.innerWidth > 768) {
-                                    videoSource.src = videoSource.dataset.src;
-                                }
-                                
+            gtag('config', 'G-VNFJ1BQX03');
+        </script>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Game Programming & AI portfolio of Sepehr Razmyar. Game Programmer at Dionic Software." />
+        <meta name="author" content="Sepehr Razmyar" />
+       
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_us" />
+        <meta property="og:url" content="https://sepehrrazmyar.com" />
+        <meta property="og:title" content="Sepehr Razmyar - Game Programming &amp; Design Portfolio" />
+        <meta property="og:description" content="Game Programming & AI portfolio of Sepehr Razmyar. &amp; Game Programmer at Dionic Software." />
+        <meta property="og:image" content="https://sepehrrazmyar.com/assets/img/thumbnail.jpg">
+        <meta property="og:image:type" content="image/jpg" />
+        <meta property="og:image:width" content="512" />
+        <meta property="og:image:height" content="512" />
+        <meta property="og:site_name" content="Sepehr Razmyar - Game Programming &amp; Design Portfolio" />
+        <meta property="og:see_also" content="https://www.linkedin.com/in/sepehr-razmyar/" />
+        <title>Sepehr Razmyar - Game Programming & AI Portfolio</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.jpg" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Simple line icons-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet"/>
+        <script language="javascript">
+            function lazyLoad(lazyVideos, lazyImages, lazyBackgrounds) {
+                if ("IntersectionObserver" in window) {
+                    var lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                        entries.forEach(function(image) {
+                            if (image.isIntersecting) {
+                                const img = image.target;
+                                const src = img.getAttribute('data-src');
+                                img.setAttribute('src', src);
+                                img.classList.remove("lazy");
+                                lazyImageObserver.disconnect();
                             }
-                        }
-
-                        video.target.load();
-                        video.target.classList.remove("lazy");
-                        lazyVideoObserver.unobserve(video.target);
-                    }
-                });
-            });
-
-            lazyVideos.forEach(function(lazyVideo) {
-                lazyVideoObserver.observe(lazyVideo);
-            });
-        }
-    }
-
-
-    function mutationCallback(mutationsList, observer) {
-        console.log("mutationCallback")
-        for (var mutation of mutationsList) {
-            if (mutation.type === 'childList') {
-            if (mutation.addedNodes.length > 0) {
-                lazyLoad();
-            }
-            }
-        }
+                        });
+                    });
         
-    }
-
-    let count = 0;
-    let maxCount = 22;
-    function checkCustomTags() {
-        console.log("checking")
-        var videos = [].slice.call(document.querySelectorAll("video.lazy"));
-        var images = [].slice.call(document.querySelectorAll("img.lazy"));
-        var backgrounds = [].slice.call(document.querySelectorAll(".lazy-background"));
-        count = videos.length + images.length + backgrounds.length;
-        maxCount = Math.max(count, maxCount)
-        if (count == maxCount) {
-            lazyLoad(videos, images, backgrounds);
-            console.log("lazy loading", count)
-        } else {
-            setTimeout(checkCustomTags, 100); // Check again after 100ms
-        }
-    }
-
-    // Call the function to check if custom tags are added
-    checkCustomTags();
-
-</script>
-
-
-<script language="javascript">
-    class RepoStats extends HTMLElement {
-        connectedCallback() {
-            var langs = ''
-            JSON.parse(this.dataset.langs).forEach(i => {langs +=  `
-                <span>
-                    <div class="language-circle ${i.length > 1 ? i[1] : i[0]}"></div>
-                    <p class="text-${this.dataset.black ? 'black' : 'white'} language">${i[0]}</p>
-                </span>`;})
-            var forks = ''
-            if (this.dataset.forks) {
-                JSON.parse(this.dataset.forks).forEach(i => {forks +=  
-                    `<span>
-                        <svg aria-hidden="true" class="octicon repo-star-svg" height="20" role="img" viewBox="0 0 10 16" width="12" fill="rgb(106, 115, 125)">
-                            <path fill="${this.dataset.black ? '#000000' : '#FFFFFF'}" fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path>
-                        </svg>
-                        <p class="text-${this.dataset.black ? 'black' : 'white'} language">${i[0]}</p>
-                    </span>`;})
+                    lazyImages.forEach(function(lazyImage) {
+                        lazyImageObserver.observe(lazyImage);
+                    });
+        
+                    var lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
+                        entries.forEach(function(entry) {
+                            if (entry.isIntersecting) {
+                                const classToAdd = entry.target.getAttribute('data-src');
+                                entry.target.classList.remove("lazy-background");
+                                entry.target.classList.add(classToAdd);
+                                lazyBackgroundObserver.unobserve(entry.target);
+                            }
+                        });
+                    });
+        
+                    lazyBackgrounds.forEach(function(lazyBackground) {
+                        lazyBackgroundObserver.observe(lazyBackground);
+                    });
+        
+        
+                    var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
+                        entries.forEach(function(video) {
+                            if (video.isIntersecting) {
+                                for (var source in video.target.children) {
+                                    var videoSource = video.target.children[source];
+                                    if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+                                        if (video.target.classList.contains("hidden-video-phone") && window.innerWidth > 768) {
+                                            videoSource.src = videoSource.dataset.src;
+                                        }
+                                        
+                                    }
+                                }
+        
+                                video.target.load();
+                                video.target.classList.remove("lazy");
+                                lazyVideoObserver.unobserve(video.target);
+                            }
+                        });
+                    });
+        
+                    lazyVideos.forEach(function(lazyVideo) {
+                        lazyVideoObserver.observe(lazyVideo);
+                    });
+                }
             }
-            var stars = ''
-            if (this.dataset.stars) {
-                JSON.parse(this.dataset.stars).forEach(i => {stars +=  
-                    `<span>
-                        <svg aria-hidden="true" class="octicon repo-star-svg" height="20" role="img" viewBox="0 0 14 16" width="20" fill="rgb(255, 191, 0)"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>
-                        <p class="text-${this.dataset.black ? 'black' : 'white'} language">${i[0]}</p>
-                    </span>`;})
+        
+        
+            function mutationCallback(mutationsList, observer) {
+                console.log("mutationCallback")
+                for (var mutation of mutationsList) {
+                    if (mutation.type === 'childList') {
+                    if (mutation.addedNodes.length > 0) {
+                        lazyLoad();
+                    }
+                    }
+                }
+                
             }
-            this.innerHTML = `
-                <div class="repo-stats">
-                    <div class="repo-left-stat">
-                        ${langs}
-                        ${forks}
-                        ${stars}
-                    </div>
-                    <!-- <div class="repo-right-stat"><p>281560 KB</p></div> -->
-                </div>`;             
-        }
-    }
-
-    customElements.define('repo-stats', RepoStats);
-</script>
-<script language="javascript">
-    const fetchPromises = [];
-
-    class PortfolioItem extends HTMLElement {
-        connectedCallback() {
-            const fetchPromise = fetch(this.dataset.src)
-                .then((response) => response.json())
-                .then((data) => {
-                    var icon = ''
-                    if (data["description"]["icon"]) {
-                        icon = `<i class="${data["description"]["icon"]["shape"]}" style="${data["description"]["icon"]["color"] ? 'color:' + data["description"]["icon"]["color"] + ';' : ''} font-size: xxx-large;"></i>`
+        
+            let count = 0;
+            let maxCount = 22;
+            function checkCustomTags() {
+                console.log("checking")
+                var videos = [].slice.call(document.querySelectorAll("video.lazy"));
+                var images = [].slice.call(document.querySelectorAll("img.lazy"));
+                var backgrounds = [].slice.call(document.querySelectorAll(".lazy-background"));
+                count = videos.length + images.length + backgrounds.length;
+                maxCount = Math.max(count, maxCount)
+                if (count == maxCount) {
+                    lazyLoad(videos, images, backgrounds);
+                    console.log("lazy loading", count)
+                } else {
+                    setTimeout(checkCustomTags, 100); // Check again after 100ms
+                }
+            }
+        
+            // Call the function to check if custom tags are added
+            checkCustomTags();
+        
+        </script>
+        
+        
+        <script language="javascript">
+            class RepoStats extends HTMLElement {
+                connectedCallback() {
+                    var langs = ''
+                    JSON.parse(this.dataset.langs).forEach(i => {langs +=  `
+                        <span>
+                            <div class="language-circle ${i.length > 1 ? i[1] : i[0]}"></div>
+                            <p class="text-${this.dataset.black ? 'black' : 'white'} language">${i[0]}</p>
+                        </span>`;})
+                    var forks = ''
+                    if (this.dataset.forks) {
+                        JSON.parse(this.dataset.forks).forEach(i => {forks +=  
+                            `<span>
+                                <svg aria-hidden="true" class="octicon repo-star-svg" height="20" role="img" viewBox="0 0 10 16" width="12" fill="rgb(106, 115, 125)">
+                                    <path fill="${this.dataset.black ? '#000000' : '#FFFFFF'}" fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path>
+                                </svg>
+                                <p class="text-${this.dataset.black ? 'black' : 'white'} language">${i[0]}</p>
+                            </span>`;})
                     }
-                    var content = ''
-                    var isVideo = data["content"]["video"]["src"] ? true : false;
-                    if (isVideo) {
-                        content = `
-                            <video loop playsinline muted class="video-hover lazy hidden-video-phone" poster="${data["content"]["video"]["poster"]}" onmouseover="this.play()" onmouseout="this.pause();">
-                                <source data-src="${data["content"]["video"]["src"]}" type="video/mp4">
-                            </video>`
-                    } else {
-                        content = `<div class="img-fluid lazy-background" data-src="${data["content"]["image"]}" style="background-size: cover"></div>`
+                    var stars = ''
+                    if (this.dataset.stars) {
+                        JSON.parse(this.dataset.stars).forEach(i => {stars +=  
+                            `<span>
+                                <svg aria-hidden="true" class="octicon repo-star-svg" height="20" role="img" viewBox="0 0 14 16" width="20" fill="rgb(255, 191, 0)"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>
+                                <p class="text-${this.dataset.black ? 'black' : 'white'} language">${i[0]}</p>
+                            </span>`;})
                     }
-                    var items = `<li class="bulletPoint img-caption">${data["content"]["caption"]}</li>`
-                    data["bulletPoints"].forEach(i => {items += `<li class="bulletPoint">* ${i}</li>`;})
                     this.innerHTML = `
-                            <a class="portfolio-item" href="${data["url"]}" ${data["newTab"] ? 'target="_blank"' : ''}>
-                                <div class="caption${isVideo ? '-video-hover' : ''}">
-                                    <div class="caption-content">
-                                        <div class="h2" style="${data["description"]["black"] ? "color:black;" : ""}">${data["title"]}</div>
-                                        <p  class="mb-0" style="${data["description"]["size"] ? "font-size:" + data["description"]["size"] + ";" : ""} ${data["description"]["bold"] ? "font-weight: bold;" : ""} ${data["description"]["black"] ? "color:black;" : ""}">${data["description"]["text"]}</p>
-                                        ${icon}
-                                        ${data["description"]["hover-text"] ? '<p class="mb-0 hidden-phone">'+ data["description"]["hover-text"] +'</p>' : ""}
+                        <div class="repo-stats">
+                            <div class="repo-left-stat">
+                                ${langs}
+                                ${forks}
+                                ${stars}
+                            </div>
+                            <!-- <div class="repo-right-stat"><p>281560 KB</p></div> -->
+                        </div>`;             
+                }
+            }
+        
+            customElements.define('repo-stats', RepoStats);
+        </script>
+        <script language="javascript">
+            const fetchPromises = [];
+        
+            class PortfolioItem extends HTMLElement {
+                connectedCallback() {
+                    const fetchPromise = fetch(this.dataset.src)
+                        .then((response) => response.json())
+                        .then((data) => {
+                            var icon = ''
+                            if (data["description"]["icon"]) {
+                                icon = `<i class="${data["description"]["icon"]["shape"]}" style="${data["description"]["icon"]["color"] ? 'color:' + data["description"]["icon"]["color"] + ';' : ''} font-size: xxx-large;"></i>`
+                            }
+                            var content = ''
+                            var isVideo = data["content"]["video"]["src"] ? true : false;
+                            if (isVideo) {
+                                content = `
+                                    <video loop playsinline muted class="video-hover lazy hidden-video-phone" poster="${data["content"]["video"]["poster"]}" onmouseover="this.play()" onmouseout="this.pause();">
+                                        <source data-src="${data["content"]["video"]["src"]}" type="video/mp4">
+                                    </video>`
+                            } else {
+                                content = `<div class="img-fluid lazy-background" data-src="${data["content"]["image"]}" style="background-size: cover"></div>`
+                            }
+                            var items = `<li class="bulletPoint img-caption">${data["content"]["caption"]}</li>`
+                            data["bulletPoints"].forEach(i => {items += `<li class="bulletPoint">* ${i}</li>`;})
+                            this.innerHTML = `
+                                    <a class="portfolio-item" href="${data["url"]}" ${data["newTab"] ? 'target="_blank"' : ''}>
+                                        <div class="caption${isVideo ? '-video-hover' : ''}">
+                                            <div class="caption-content">
+                                                <div class="h2" style="${data["description"]["black"] ? "color:black;" : ""}">${data["title"]}</div>
+                                                <p  class="mb-0" style="${data["description"]["size"] ? "font-size:" + data["description"]["size"] + ";" : ""} ${data["description"]["bold"] ? "font-weight: bold;" : ""} ${data["description"]["black"] ? "color:black;" : ""}">${data["description"]["text"]}</p>
+                                                ${icon}
+                                                ${data["description"]["hover-text"] ? '<p class="mb-0 hidden-phone">'+ data["description"]["hover-text"] +'</p>' : ""}
+                                            </div>
+                                        </div>
+                                        ${content}
+                                        <repo-stats data-langs='[${data["repo-stats"]["langs"]}]' data-forks='[${data["repo-stats"]["forks"]}]' data-stars='[${data["repo-stats"]["stars"]}]' data-black=${data["repo-stats"]["black"]}></repo-stats>
+                                    </a>
+                                    <ul>${items}</ul>
+                                `;
+                        });
+                    fetchPromises.push(fetchPromise);
+                }
+            }
+        
+            customElements.define('portfolio-item', PortfolioItem);
+        </script>
+        <script language="javascript">
+            class PortfolioSection extends HTMLElement {
+                connectedCallback() {
+                    const fetchPromise = fetch(this.dataset.src)
+                        .then((response) => response.json())
+                        .then((data) => {
+                            var items = ``
+                            data["items"].forEach(i => {items += `<portfolio-item class="col-lg-6" ${i["id"] ? 'id="' + i["id"] + '"' : ''} data-src="${i["src"]}"></portfolio-item>`;})
+                            this.innerHTML = `
+                            <section class="content-section ${data["color"]} text-white text-center">
+                                <div class="container px-4 px-lg-5">
+                                    <div class="content-section-heading text-center">
+                                        <h2>${data["title"]}</h2>
+                                        <h3 class="text-secondary mb-0">${data["description"]}</h3>
+                                    </div>
+                                    <div class="row gx-0">
+                                        ${items}
                                     </div>
                                 </div>
-                                ${content}
-                                <repo-stats data-langs='[${data["repo-stats"]["langs"]}]' data-forks='[${data["repo-stats"]["forks"]}]' data-stars='[${data["repo-stats"]["stars"]}]' data-black=${data["repo-stats"]["black"]}></repo-stats>
-                            </a>
-                            <ul>${items}</ul>
-                        `;
-                });
-            fetchPromises.push(fetchPromise);
-        }
-    }
-
-    customElements.define('portfolio-item', PortfolioItem);
-</script>
-<script language="javascript">
-    class PortfolioSection extends HTMLElement {
-        connectedCallback() {
-            const fetchPromise = fetch(this.dataset.src)
-                .then((response) => response.json())
-                .then((data) => {
-                    var items = ``
-                    data["items"].forEach(i => {items += `<portfolio-item class="col-lg-6" ${i["id"] ? 'id="' + i["id"] + '"' : ''} data-src="${i["src"]}"></portfolio-item>`;})
+                            </section>`;
+                        });
+                    fetchPromises.push(fetchPromise);
+                }
+            }
+        
+            customElements.define('portfolio-section', PortfolioSection);    
+        </script>
+        <script src="js/templates/header.js"></script>
+        <script src="js/templates/sidebar.js"></script>
+        <script src="js/templates/social-links.js"></script>
+        <script language="javascript">
+            class MiniProfile extends HTMLElement {
+                connectedCallback() {
                     this.innerHTML = `
-                    <section class="content-section ${data["color"]} text-white text-center">
-                        <div class="container px-4 px-lg-5">
-                            <div class="content-section-heading text-center">
-                                <h2>${data["title"]}</h2>
-                                <h3 class="text-secondary mb-0">${data["description"]}</h3>
-                            </div>
-                            <div class="row gx-0">
-                                ${items}
+                    <div class="resizable-div on-top hidden-phone" id="miniProfile">
+                        <div class="row gx-4 gx-lg-5 justify-content-center">
+                            <div class="col-lg-10 text-center distanceBasedOpacity" style="background-color: #d4e5eb8f; border-radius: 20px;">
+                                <img src="${this.dataset.img}" class="profPic-fluid" style="background-size: cover">
+                                <h2><strong class="text-white" style="font-family: Cursive; font-weight: bold">${this.dataset.name}</strong></h2>
+                                <p class="lead" style="font-weight: 500">
+                                    <span class="text-white">${this.dataset.title}</span> 
+                                </p>
+                                <a class="buttonHoverable nav-link text-white" href="${this.dataset.resume}"><span style="text-align: center;">Résumé</span></a>
+                                <social-links data-items='${this.dataset.socials}'></social-links>
                             </div>
                         </div>
-                    </section>`;
-                });
-            fetchPromises.push(fetchPromise);
-        }
-    }
-
-    customElements.define('portfolio-section', PortfolioSection);    
-</script>
-<script src="js/templates/header.js"></script>
-<script src="js/templates/sidebar.js"></script>
-<script src="js/templates/social-links.js"></script>
-<script language="javascript">
-    class MiniProfile extends HTMLElement {
-        connectedCallback() {
-            this.innerHTML = `
-            <div class="resizable-div on-top hidden-phone" id="miniProfile">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-10 text-center distanceBasedOpacity" style="background-color: #d4e5eb8f; border-radius: 20px;">
-                        <img src="${this.dataset.img}" class="profPic-fluid" style="background-size: cover">
-                        <h2><strong class="text-white" style="font-family: Cursive; font-weight: bold">${this.dataset.name}</strong></h2>
-                        <p class="lead" style="font-weight: 500">
-                            <span class="text-white">${this.dataset.title}</span> 
-                        </p>
-                        <a class="buttonHoverable nav-link text-white" href="${this.dataset.resume}"><span style="text-align: center;">Résumé</span></a>
-                        <social-links data-items='${this.dataset.socials}'></social-links>
-                    </div>
-                </div>
-            </div>`;             
-        }
-    }
-
-    customElements.define('mini-profile', MiniProfile);
-</script>
-<script language="javascript">
-    class MainVideo extends HTMLElement {
-        connectedCallback() {
-            this.innerHTML = `
-                <video loop autoplay muted class="video" id="portfolio-video" poster="${this.dataset.poster}">
-                    <source type="video/mp4">
-                </video>
-                <div class="loader" id="videoLoader"></div>`;             
-        }
-    }
-
-    customElements.define('main-video', MainVideo);
-</script>
-
-<script
-    disable-devtool-auto
-    src='https://cdn.jsdelivr.net/npm/disable-devtool'
-    md5='8f00e5b5a5ce6277e9c6452bcfed0e5a'
-    url='https://sepehrrazmyar.com/404.html'
-    disable-menu='true'
-    clear-log='true'
-    disable-select='false'
-    disable-copy='false'
-    disable-cut='false'
-    disable-paste='false'
-    timeOutUrl='https://sepehrrazmyar.com/pages/404.html'
-></script>
-
-
-<section class="content-section bg-light" id="about">
-    <div class="container px-4 px-lg-5 text-center text-white">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-lg-10">
-                <h1>About Me</h1>
-                <p class="lead mb-5" style="font-weight: 500">
-                    Hi! I'm <span class="underline">Sepehr</span>, a <span class="underline">game programmer</span> with <span class="underline">over 6 years of experience</span> from <span class="underline">Germany</span> working at <span class="underline"><a href="https://dionicsoftware.com/" target="_blank">Dionic Software</a></span>. I studied <span class="underline">Computer Engineering</span> at the <span class="underline"><a href="https://ut.ac.ir/en" target="_blank">University of Tehran</a></span>. 
-                </p>
-                <p class="lead mb-5" style="font-weight: 500; font-size: 1.15rem;">
-                    Here you can see some of the projects I've had the opportunity of contributing to and some of my personal projects I've been working on. I love to take on challenges and learn new things so feel free to contact me :)
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-<portfolio-section id="professional" data-src="data/professional.json"></portfolio-section>
-<portfolio-section id="personal" data-src="data/personal.json"></portfolio-section>
-<portfolio-section id="certificates" data-src="data/certificates.json"></portfolio-section>
-<portfolio-section id="honors" data-src="data/honors.json"></portfolio-section>
-
-
-<script src="js/scripts.js"></script>
-<script src="js/sticky.js"></script>
-<script src="js/loader.js"></script>
-<script language="javascript">
-    var elements = [].slice.call(document.querySelectorAll(".distanceBasedOpacity"));
+                    </div>`;             
+                }
+            }
+        
+            customElements.define('mini-profile', MiniProfile);
+        </script>
+        <script language="javascript">
+            class MainVideo extends HTMLElement {
+                connectedCallback() {
+                    this.innerHTML = `
+                        <video loop autoplay muted class="video" id="portfolio-video" poster="${this.dataset.poster}">
+                            <source type="video/mp4">
+                        </video>
+                        <div class="loader" id="videoLoader"></div>`;             
+                }
+            }
+        
+            customElements.define('main-video', MainVideo);
+        </script>
+        
+        <script
+            disable-devtool-auto
+            src='https://cdn.jsdelivr.net/npm/disable-devtool'
+            md5='8f00e5b5a5ce6277e9c6452bcfed0e5a'
+            url='https://sepehrrazmyar.com/404.html'
+            disable-menu='true'
+            clear-log='true'
+            disable-select='false'
+            disable-copy='false'
+            disable-cut='false'
+            disable-paste='false'
+            timeOutUrl='https://sepehrrazmyar.com/pages/404.html'
+        ></script>
 
         
-    // Add event listener for the mousemove event
-    document.addEventListener('mousemove', (event) => {
-        const mouseX = event.pageX;
-        const mouseY = event.pageY;
+    </head>
 
-        elements.forEach(function(element) {
-            const { left, top, width, height } = element.getBoundingClientRect();
+    <body id="page-top">
+        <noscript>
+            <div class="error message">
+                I'm sorry but my site <strong>requires</strong> JavaScript!
+            </div>    
+        </noscript>
+        <main-sidebar data-items='[["#page-top", "Portfolio"], ["#professional", "Professional Projects"], ["#personal", "Personal Projects"], ["#certificates", "Others"]]'></main-sidebar>
+        <main-header data-brand="Sepehr Razmyar" data-items='[["assets/Sepehr_Razmyar___Resume.pdf", "Résumé"], ["#professional", "Professional Projects"], ["#personal", "Personal Projects"], ["#certificates", "Others"]]'></main-header>
+        <section>
+            <div class="masthead d-flex align-items-center">
+                <main-video data-poster="assets/img/thumbnail.jpg"></main-video>
+                <mini-profile style="width: 100%;" data-img="assets/img/profPic.png" data-name="Sepehr Razmyar" data-title="Game Programmer" data-resume="assets/Sepehr_Razmyar___Resume.pdf" data-socials='[["mailto:sepehreverret0077@gmail.com", "fa fa-envelope"], ["https://www.youtube.com/channel/UCaO8nbLfYmHWerkXYhq186A", "icon-social-youtube"], ["https://www.linkedin.com/in/sepehr-razmyar/", "icon-social-linkedin"], ["https://github.com/Null3rror", "icon-social-github"], ["https://null3rror.itch.io/", "fab fa-itch-io"]]'></mini-profile>
+            </div>
+        </section>
 
-            const distanceX = Math.abs(mouseX - (left + width / 2));
-            const distanceY = Math.abs(mouseY - (top + height / 2));
-            const distance = Math.sqrt(distanceX ** 2 + distanceY ** 2);
-            const maxDistance = Math.sqrt((screen.width / 2) ** 2 + (screen.height / 2) ** 2);
-            const opacity = 1 - distance / maxDistance;
 
-            // Set the opacity of the element
-            element.style.opacity = Math.max(opacity, 0.2);
-        });
-    });
-</script>
+        <section class="content-section bg-light" id="about">
+            <div class="container px-4 px-lg-5 text-center text-white">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-10">
+                        <h1>About Me</h1>
+                        <p class="lead mb-5" style="font-weight: 500">
+                            Hi! I'm <span class="underline">Sepehr</span>, a <span class="underline">game programmer</span> with <span class="underline">over 6 years of experience</span> from <span class="underline">Germany</span> working at <span class="underline"><a href="https://dionicsoftware.com/" target="_blank">Dionic Software</a></span>. I studied <span class="underline">Computer Engineering</span> at the <span class="underline"><a href="https://ut.ac.ir/en" target="_blank">University of Tehran</a></span>. 
+                        </p>
+                        <p class="lead mb-5" style="font-weight: 500; font-size: 1.15rem;">
+                            Here you can see some of the projects I've had the opportunity of contributing to and some of my personal projects I've been working on. I love to take on challenges and learn new things so feel free to contact me :)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <portfolio-section id="professional" data-src="data/professional.json"></portfolio-section>
+        <portfolio-section id="personal" data-src="data/personal.json"></portfolio-section>
+        <portfolio-section id="certificates" data-src="data/certificates.json"></portfolio-section>
+        <portfolio-section id="honors" data-src="data/honors.json"></portfolio-section>
+
+
+        <footer class="footer text-center" id="contact">
+            <div class="container px-4 px-lg-5">
+                <social-links data-items='[["mailto:sepehreverret0077@gmail.com", "fa fa-envelope"], ["https://www.youtube.com/channel/UCaO8nbLfYmHWerkXYhq186A", "icon-social-youtube"], ["https://www.linkedin.com/in/sepehr-razmyar/", "icon-social-linkedin"], ["https://github.com/Null3rror", "icon-social-github"], ["https://null3rror.itch.io/", "fab fa-itch-io"]]'></social-links>
+                <br>
+                <p class="text-muted small mb-0">Copyright &copy; Sepehr Razmyar 2023</p>
+                <p class="text-muted small mb-0">vRelease 1.0.0</p>
+            </div>
+        </footer>
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
+
+
+        <script src="js/scripts.js"></script>
+        <script src="js/sticky.js"></script>
+        <script src="js/loader.js"></script>
+        <script language="javascript">
+            var elements = [].slice.call(document.querySelectorAll(".distanceBasedOpacity"));
+
+                
+            // Add event listener for the mousemove event
+            document.addEventListener('mousemove', (event) => {
+                const mouseX = event.pageX;
+                const mouseY = event.pageY;
+
+                elements.forEach(function(element) {
+                    const { left, top, width, height } = element.getBoundingClientRect();
+
+                    const distanceX = Math.abs(mouseX - (left + width / 2));
+                    const distanceY = Math.abs(mouseY - (top + height / 2));
+                    const distance = Math.sqrt(distanceX ** 2 + distanceY ** 2);
+                    const maxDistance = Math.sqrt((screen.width / 2) ** 2 + (screen.height / 2) ** 2);
+                    const opacity = 1 - distance / maxDistance;
+
+                    // Set the opacity of the element
+                    element.style.opacity = Math.max(opacity, 0.2);
+                });
+            });
+        </script>
+    </body>
+</html>
